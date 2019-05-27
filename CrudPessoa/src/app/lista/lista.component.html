@@ -1,0 +1,21 @@
+<div class="col-md-12">
+  <table class="table">
+    <label>Exemplo Dropdown</label>
+    <select class="form-control">
+      <option *ngFor="let item of pessoas" value={{item.id}}>{{item.nome}}</option>
+    </select>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Idade</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let pessoa of pessoas">
+      <tr>
+        <td>{{pessoa.nome}}</td>
+        <td>{{pessoa.idade}}</td>
+        <td><Button class="btn btn-warning" [routerLink]="['/lista/edit', pessoa.id]">Alterar</Button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

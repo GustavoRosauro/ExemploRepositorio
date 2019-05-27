@@ -1,0 +1,19 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="col-md-6">
+  <h1>Cadastro Usuário</h1>
+</div>
+<br>
+<br>
+<form #form="ngForm">
+<div class="col-md-5">
+<label class="label">Nome</label>
+<input class="form-control" type="text" [(ngModel)]="pessoa.nome" id="nome" name="nome" #nome="ngModel" required>
+<label>Idade</label>
+<input class="form-control" type="number" [(ngModel)]="pessoa.idade" id="idade" name="idade" #idade="ngModel" required>
+<br>
+<br>
+<input class="btn btn-success" type="submit" value="Salvar" (click)="Cadastrar()" [disabled]="!form.form.valid">
+<a [routerLink]="['/lista']" class="btn btn-info" >Ver usuários</a>
+</div>
+</form>
+<router-outlet></router-outlet>
